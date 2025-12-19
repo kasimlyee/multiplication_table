@@ -1,8 +1,37 @@
 def generate_row(row_num: int, size: int) -> list:
+    """
+    Generate a row of a multiplication table.
+
+    Parameters
+    ----------
+    row_num : int
+        The row number of the multiplication table.
+    size : int
+        The size of the multiplication table.
+
+    Returns
+    -------
+    list
+        A list representing the row of the multiplication table.
+    """
+
     return [row_num * i for i in range(1, size+1)]
 
 
 def generate_table(size: int) -> list:
+    """
+    Generate a multiplication table of a specified size.
+
+    Parameters
+    ----------
+    size : int
+        The size of the multiplication table.
+
+    Returns
+    -------
+    list
+        A list of lists, where each inner list represents a row of the multiplication table.
+    """
     return [generate_row(i, size) for i in range(1, size+1)]
 
 if __name__ == "__main__":
