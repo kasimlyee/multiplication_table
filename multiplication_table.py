@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 def generate_row(row_num: int, size: int) -> list:
     """
     Generate a row of a multiplication table.
@@ -57,8 +59,7 @@ if __name__ == "__main__":
             if size <= 0:
                 raise ValueError("Size must be a positive integer.\n")
             table = generate_table(size)
-            for row in table:
-                print("\t".join(f"| {num:4}" for num in row))
+            print(tabulate(table,headers=table[0], tablefmt="github"))
             choice = input("\n\tEnter another size or 'exit' to quit:\n\t>>>>>>>>    ")
             print("\n")
         except ValueError as ve:
